@@ -76,9 +76,6 @@ async def on_reaction_add(reaction, user):
 		if reaction.count<=1:
 			msg="Fillun kurvat me gay emotes"
 			await client.send_message(reaction.message.channel,msg)
-		else:
-			return
-	else:
-		return
+	
 
 client.run(emaili, pasuordi)
