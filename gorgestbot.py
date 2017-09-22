@@ -66,12 +66,16 @@ async def on_ready():
 
 @client.event
 async def on_message_delete(message):
+    if message.author == client.user:
+        return
 	msg = "Mesazhi {0.content} nga {0.author.mention} u fshi".format(message)
 	await client.send_message(message.channel, msg)
 
 
 @client.event
 async def on_reaction_add(reaction, user):
+    if reaction.message.author == client.user:
+        return
 	if reaction.emoji.name=="gej":
 		if reaction.count<=1:
 			msg="Fillun kurvat me gay emotes"
